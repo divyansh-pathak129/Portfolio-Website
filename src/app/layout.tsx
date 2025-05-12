@@ -18,12 +18,30 @@ export const metadata: Metadata = {
     default: DATA.name,
     template: `%s | ${DATA.name}`,
   },
-  description: DATA.description,
+  description: DATA.summary,
+  keywords: DATA.skills.join(", "),
+  authors: [{ name: DATA.name, url: DATA.url }],
+  creator: DATA.name,
+  publisher: DATA.name,
   openGraph: {
-    title: `${DATA.name}`,
-    description: DATA.description,
+    title: `${DATA.name} - Portfolio`,
+    description: DATA.summary,
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName: `${DATA.name}'s Portfolio`,
+    images: [
+      {
+        url: `${DATA.url}/api/og?title=${DATA.name}&description=${encodeURIComponent(DATA.description)}`,
+        width: 1200,
+        height: 630,
+        alt: DATA.name,
+      },
+      {
+        url: `${DATA.url}/me.jpg`,
+        width: 800,
+        height: 600,
+        alt: DATA.name,
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -39,8 +57,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
     card: "summary_large_image",
+    title: `${DATA.name} - Creator, Student & Developer`,
+    description: DATA.summary,
+    creator: "@div_pathak129",
+    images: [
+      `${DATA.url}/api/og?title=${DATA.name}&description=${encodeURIComponent(DATA.description)}`,
+      `${DATA.url}/me.jpg`
+    ],
   },
   verification: {
     google: "",
