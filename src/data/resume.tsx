@@ -1,17 +1,17 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, FileTextIcon } from "lucide-react";
 
 export const DATA = {
   name: "Divyansh Pathak",
   initials: "DP",
-  url: "https://divyanshpathak.online",
+  url: "https://divyanshpathak.ninja",
   location: "Pune, Maharashtra",
   locationLink: "https://www.google.com/maps/place/pune",
   description:
-    "Creator, Musician, Coder, Student. Currently making MindFlow, VStart & XonX",
+    "Creator, Musician, Coder, Student. Currently making MindFlow, Notch, Rawrr & XonX",
   summary:
-    "Hi there! I’m Divyansh Pathak, a first-year Computer Science student specializing in Artificial Intelligence and Data Science at Maharashtra Institute of Technology WPU. I’m currently working on VStart, a platform designed to streamline startup management and collaboration, and also running my own record label, XonX Records.",
-  avatarUrl: "/me.jpg",
+    "Hi there! I’m Divyansh Pathak, a second-year Computer Science student specializing in Artificial Intelligence and Data Science at MIT-WPU. I’m currently working on Notch, an AI powered assistant deeply integrated into your workflow and also running my own record label, XonX Records.",
+  avatarUrl: "/pfp.jpg",
   skills: [
     "React",
     "JavaScript",
@@ -28,9 +28,10 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/assignments", icon: FileTextIcon, label: "Assignments" },
   ],
   contact: {
-    email: "me@divyanshpathak.online",
+    email: "me@divyanshpathak.ninja",
     tel: "+916396192629",
     social: {
       GitHub: {
@@ -56,7 +57,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "mailto:me@divyanshpathak.online",
+        url: "mailto:me@divyanshpathak.ninja",
         icon: Icons.email,
 
         navbar: false,
@@ -66,16 +67,29 @@ export const DATA = {
 
   work: [
     {
+      company: "Notch",
+      badges: [],
+      href: "https://getnotch.app",
+      location: "Pune",
+      title: "Founder",
+      logoUrl: "/notch.png",
+      start: "May 2025",
+      end: "Present",
+      description:
+        "Notch is an AI powered assistant deeply integrated into your workflow. It is designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals.",
+    },
+
+    {
       company: "MindFlow",
       badges: [],
       href: "https://mindflowdash.online",
       location: "Pune",
       title: "Founder",
       logoUrl: "/mindflow.png",
-      start: "December 2023",
+      start: "December 2024",
       end: "Present",
       description:
-        "XonX Records is my independent music label where I release all of my music under three distinct aliases: Ravient, Aileron, and The BRKN. Each alias represents a unique sound and style, but The BRKN is the flagship project where I put out my highest-quality work. Through XonX Records, I aim to explore diverse musical landscapes and push creative boundaries, with each alias bringing something different to the table. It’s my way of sharing a broad spectrum of music, from experimental to polished, with the world.",
+        "MindFlow is an  productivity focused new-tab chrome extension designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals. The platform is currently live on the Chrome Web Store.",
     },
     {
       company: "VStart",
@@ -85,14 +99,14 @@ export const DATA = {
       title: "Creator",
       logoUrl: "/VStart.png",
       start: "June 2024",
-      end: "Present",
+      end: "Jan 2025",
       description:
-        "Currently planning to release the main app in early December. VStart is a comprehensive platform designed to help startups manage their growth and operations. It features tools for project planning, collaborative work, and effective communication, all tailored to streamline the startup journey from idea to launch.",
+        "VStart is a comprehensive platform designed to help startups manage their growth and operations. It features tools for project planning, collaborative work, and effective communication, all tailored to streamline the startup journey from idea to launch.",
     },
     {
       company: "XonX Records",
       badges: [],
-      href: "https://divyanshpathak129.wixsite.com/xonx-records",
+      href: "https://xonx.divyanshpathak.ninja",
       location: "Hobby",
       title: "Head",
       logoUrl: "/XonX.png",
@@ -146,12 +160,38 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "VStart",
-      href: "https://vstart.online",
-      dates: "June 2024- Current",
+      title: "Notch",
+      dates: "May 2025",
       active: true,
       description:
-        "For my product VStart, I decided to make a landing page to attract people to waitlist my app.. This app is made with React and Node.js.",
+        "Notch is an AI powered assistant deeply integrated into your workflow. It is designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals.",
+      technologies: [
+        "Plasmo",
+        "Vercel",
+        "Clerk",
+        "OpenAI",
+        "Node.js",
+        "MongoDB",
+        "Vercel",
+        "Shadcn UI",
+        "Magic UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://getnotch.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "https://youtu.be/tge1Qq3DYsE?si=4JOY63yLD_X1w_6Y",
+    },
+    {
+      title: "MindFlow",
+      dates: "October 2024",
+      active: true,
+      description:
+        "MindFlow is an  productivity focused new-tab chrome extension designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals. The platform is currently live on the Chrome Web Store.",
       technologies: [
         "React JS",
         "Vercel",
@@ -165,10 +205,30 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://vstart.online",
+          href: "https://mindflowdash.online",
           icon: <Icons.globe className="size-3" />,
         },
       ],
+      image: "",
+      video: "https://youtu.be/tge1Qq3DYsE?si=4JOY63yLD_X1w_6Y",
+    },
+    {
+      title: "VStart",
+      dates: "June 2024",
+      active: false,
+      description:
+        "For my product VStart, I decided to make a landing page to attract people to waitlist my app.. This app is made with React and Node.js.",
+      technologies: [
+        "React JS",
+        "Vercel",
+        "Resend",
+        "MongoDB",
+        "Mat UI",
+        "Node.js",
+        "Shadcn UI",
+        "Magic UI",
+      ],
+      links: [],
       image: "",
       video:
         // "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
@@ -177,8 +237,8 @@ export const DATA = {
     {
       title: "AgroAI",
       href: "https://agroaiv1.netlify.app/",
-      dates: "August 2023 - Present",
-      active: true,
+      dates: "August 2024",
+      active: false,
       description:
         "Made a AI Chatbot for diease detection in crops for a Smart India Hackathon.",
       technologies: [
@@ -199,21 +259,22 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "https://vibgvvzzunbfcqwcjfbk.supabase.co/storage/v1/object/public/Personal%20Stuff/AgroAI%20Demo%20-%20Made%20with%20Clipchamp.mp4",
+      video: "C:/Users/divya/Desktop/Coding/portfolio2/public/agroai.mp4",
     },
     {
-      title: "IRIS Website",
-      href: "https://www.instagram.com/iris_mitwpu/",
-      dates: "September 2024",
+      title: "BadhKavach(Winners)",
+      href: "https://hackmitwpu.vercel.app/",
+      dates: "February 2025",
       active: true,
       description:
-        "Developed crutial pages for the website within 1 hour.",
+        "Created the backend and Integration with our customed AI Model for a College AI Hackathon.",
       technologies: [
-        "Python",
+        "React JS",
         "Node JS",
-        "tensorflow",
-        "Juypter",
-        "Vite/React JS",
+        "Tensorflow",
+        "Vercel",
+        "Shadcn UI",
+        "Magic UI",
       ],
       links: [
         {
@@ -224,28 +285,27 @@ export const DATA = {
       ],
       image: "",
       video:
-      "https://vibgvvzzunbfcqwcjfbk.supabase.co/storage/v1/object/public/Personal%20Stuff//BadhKavach.mp4"
+        "https://vibgvvzzunbfcqwcjfbk.supabase.co/storage/v1/object/public/Personal%20Stuff//BadhKavach.mp4",
     },
     {
       title: "IRIS Website",
-      href: "https://www.instagram.com/iris_mitwpu/",
+      href: "https://www.iris-club.in/",
       dates: "September 2024",
       active: true,
       description:
-        "Developed crutial pages for the website within 1 hour.",
+        "Developed crutial pages for the website within 1 hour. Currently a Project Head in the club.",
       technologies: [
         "React JS",
         "Javascript",
         "mySQL",
         "Node.js",
         "TailwindCSS",
-        "Razorpay",
-        "Vercel & Heroku",
+        "Vercel",
       ],
       links: [
         {
           type: "Website",
-          href: "https://www.instagram.com/iris_mitwpu/",
+          href: "https://iris.mitwpu.edu.in/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -254,8 +314,7 @@ export const DATA = {
         "https://vibgvvzzunbfcqwcjfbk.supabase.co/storage/v1/object/public/Personal%20Stuff/WhatsApp%20Video%202024-09-01%20at%2023.17.52_c4daffa9.mp4?t=2024-09-14T05%3A25%3A58.549Z",
     },
 
-    //Formix, Workify, Nykaa, MindFlow 
-
+    //Formix, Workify, Nykaa, MindFlow
   ],
   hackathons: [
     {
@@ -302,8 +361,6 @@ export const DATA = {
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
       links: [],
     },
-
-
 
     // {
     //   title: "Hack The North",

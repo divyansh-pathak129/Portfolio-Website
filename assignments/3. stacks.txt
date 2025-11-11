@@ -1,0 +1,143 @@
+3. stacks
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX 100
+
+struct Stack {
+    char arr[MAX];
+    int top;
+};
+
+void initStack(struct Stack *s) {
+    s->top = -1;
+}
+
+int isEmpty(struct Stack *s) {
+    return s->top == -1;
+}
+
+int isFull(struct Stack *s) {
+    return s->top == MAX - 1;
+}
+
+void push(struct Stack *s, char c) {
+    if(!isFull(s))
+        s->arr[++(s->top)] = c;
+}
+
+char pop(struct Stack *s) {
+    if(!isEmpty(s))
+        return s->arr[(s->top)--];
+    return '\0';
+}
+
+char peek(struct Stack *s) {
+    if(!isEmpty(s))
+        return s->arr[s->top];
+    return '\0';
+}
+
+int precedence(char c) {
+    if(c == '^')
+        return 3;
+    else if(c == '*' || c == '/')
+        return 2;
+    else if(c == '+' || c == '-')
+        return 1;
+    else
+        return 0;
+}
+
+void reverse(char exp[]) {
+    int i, j;
+    char temp;
+    for(i = 0, j = (int)strlen(exp)-1; i < j; i++, j--) {
+        temp = exp[i];
+        exp[i] = exp[j];
+        exp[j] = temp;
+    }
+}
+
+void infixToPostfix(char infix[], char postfix[]) {
+    struct Stack s;
+    initStack(&s);
+    int i, k = 0;
+    char ch;
+    int len = (int)strlen(infix);
+    for(i = 0; i < len; i++) {
+        ch = infix[i];
+        if(isalnum((unsigned char)ch))
+            postfix[k++] = ch;
+        else if(ch == '(')
+            push(&s, ch);
+        else if(ch == ')') {
+            while(!isEmpty(&s) && peek(&s) != '(')
+                postfix[k++] = pop(&s);
+            if(!isEmpty(&s)) pop(&s); // pop '(' if present
+        }
+        else {
+            while(!isEmpty(&s) && precedence(peek(&s)) >= precedence(ch))
+                postfix[k++] = pop(&s);
+            push(&s, ch);
+        }
+    }
+    while(!isEmpty(&s))
+        postfix[k++] = pop(&s);
+    postfix[k] = '\0';
+}
+
+void infixToPrefix(char infix[], char prefix[]) {
+    char temp[100];
+    reverse(infix);
+    int i;
+    int len = (int)strlen(infix);
+    for(i = 0; i < len; i++) {
+        if(infix[i] == '(')
+            infix[i] = ')';
+        else if(infix[i] == ')')
+            infix[i] = '(';
+    }
+    infixToPostfix(infix, temp);
+    reverse(temp);
+    strcpy(prefix, temp);
+}
+
+int main() {
+    char infix[100], result[100];
+    int choice;
+
+    printf("Enter infix expression: ");
+    if (fgets(infix, sizeof(infix), stdin) == NULL) {
+        fprintf(stderr, "Error reading input.\n");
+        return 1;
+    }
+    /* remove possible trailing newline added by fgets */
+    size_t ln = strlen(infix);
+    if (ln > 0 && infix[ln-1] == '\n') infix[ln-1] = '\0';
+
+    printf("\nChoose Conversion:\n");
+    printf("1. Infix to Postfix\n");
+    printf("2. Infix to Prefix\n");
+    printf("Enter your choice: ");
+    if (scanf("%d", &choice) != 1) {
+        fprintf(stderr, "Invalid input for choice.\n");
+        return 1;
+    }
+
+    switch(choice) {
+        case 1:
+            infixToPostfix(infix, result);
+            printf("\nPostfix Expression: %s\n", result);
+            break;
+        case 2:
+            infixToPrefix(infix, result);
+            printf("\nPrefix Expression: %s\n", result);
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+
+    return 0;
+}
