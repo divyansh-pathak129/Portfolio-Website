@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { DRIVE_TOKEN } from "@/lib/drive-auth";
-import { getMetadata, saveMetadata } from "../route";
+import { getMetadata, saveMetadata } from "@/lib/drive-metadata";
 
 const UPLOADS_DIR = path.join(process.cwd(), "uploads");
 
