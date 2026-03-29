@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, FileTextIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, FileTextIcon, HardDriveIcon } from "lucide-react";
 
 export const DATA = {
   name: "Divyansh Pathak",
@@ -8,9 +8,9 @@ export const DATA = {
   location: "Pune, Maharashtra",
   locationLink: "https://www.google.com/maps/place/pune",
   description:
-    "Creator, Musician, Coder, Student. Currently making MindFlow, Notch, Rawrr & XonX",
+    "Creator, Musician, Coder, Student. Currently building OurSociety, Tasket, Notch & MindFlow",
   summary:
-    "Hi there! I’m Divyansh Pathak, a second-year Computer Science student specializing in Artificial Intelligence and Data Science at MIT-WPU. I’m currently working on Notch, an AI powered assistant deeply integrated into your workflow and also running my own record label, XonX Records.",
+    "I’m Divyansh Pathak. I build things because thinking about them for too long gets boring. I’m a computer science student focused on AI and data science, but the more honest version is that I’m a hands-on product builder who learns by throwing myself at difficult projects and dealing with the consequences in public. I’ve worked across web development, student technical leadership, and a small pile of startup ideas with names that sound like they were chosen at 2 a.m. on purpose.",
   avatarUrl: "/pfp.jpg",
   skills: [
     "React",
@@ -28,7 +28,8 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
-    { href: "/assignments", icon: FileTextIcon, label: "Assignments" },
+    // { href: "/assignments", icon: FileTextIcon, label: "Assignments" },
+    { href: "/drive", icon: HardDriveIcon, label: "Drive" },
   ],
   contact: {
     email: "me@divyanshpathak.ninja",
@@ -66,6 +67,30 @@ export const DATA = {
   },
 
   work: [
+    {
+      company: "OurSociety",
+      badges: [],
+      href: "https://oursociety.org.in",
+      location: "Remote",
+      title: "Co-Founder",
+      logoUrl: "/oursociety.png",
+      start: "2025",
+      end: "Present",
+      description:
+        "OurSociety is a community-driven platform connecting people through shared interests and local communities. Building the product and driving growth from the ground up.",
+    },
+    {
+      company: "Tasket",
+      badges: [],
+      href: "https://tasket.co",
+      location: "Remote",
+      title: "Co-Founder",
+      logoUrl: "/tasket.png",
+      start: "2025",
+      end: "Present",
+      description:
+        "Tasket is a productivity startup focused on streamlining task management and team collaboration. Leading product development and strategy.",
+    },
     {
       company: "Notch",
       badges: [],
@@ -735,4 +760,4 @@ export const DATA = {
     //   ],
     // },
   ],
-} as const;
+};
