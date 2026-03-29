@@ -6,6 +6,9 @@ import Link from "next/link";
 export const metadata = {
   title: "Blog",
   description: "Explore my thoughts on tech, startups, AI, music production and more.",
+  alternates: {
+    canonical: `${DATA.url}/blog`,
+  },
   openGraph: {
     title: `Blog | ${DATA.name}`,
     description: "Explore my thoughts on tech, startups, AI, music production and more.",

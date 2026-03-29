@@ -6,8 +6,38 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Markdown from "react-markdown";
+
+export const metadata: Metadata = {
+  title: `${DATA.name} - Developer, Creator & Student`,
+  description: DATA.summary,
+  alternates: {
+    canonical: DATA.url,
+  },
+  openGraph: {
+    title: `${DATA.name} - Developer, Creator & Student`,
+    description: DATA.summary,
+    url: DATA.url,
+    type: "profile",
+    images: [
+      {
+        url: `${DATA.url}/api/og?title=${encodeURIComponent(DATA.name)}&description=${encodeURIComponent(DATA.description)}`,
+        width: 1200,
+        height: 630,
+        alt: DATA.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${DATA.name} - Developer, Creator & Student`,
+    description: DATA.summary,
+    creator: "@div_pathak129",
+    images: [`${DATA.url}/api/og?title=${encodeURIComponent(DATA.name)}&description=${encodeURIComponent(DATA.description)}`],
+  },
+};
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -165,7 +195,7 @@ export default function Page() {
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
+                  10+ hackathons. People from around the
                   country would come together and build incredible things in 2-3
                   days. It was eye-opening to see the endless possibilities
                   brought to life by a group of motivated and passionate

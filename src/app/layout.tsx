@@ -66,10 +66,50 @@ export const metadata: Metadata = {
       `${DATA.url}/me.jpg`
     ],
   },
+  alternates: {
+    canonical: DATA.url,
+  },
   verification: {
     google: "",
     yandex: "",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${DATA.url}/#person`,
+      name: DATA.name,
+      url: DATA.url,
+      image: {
+        "@type": "ImageObject",
+        url: `${DATA.url}${DATA.avatarUrl}`,
+      },
+      sameAs: [
+        DATA.contact.social.GitHub.url,
+        DATA.contact.social.LinkedIn.url,
+        DATA.contact.social.X.url,
+        DATA.contact.social.YouTube.url,
+      ],
+      jobTitle: "Computer Science Student & Developer",
+      worksFor: {
+        "@type": "Organization",
+        name: "MIT-WPU",
+      },
+      knowsAbout: DATA.skills,
+      description: DATA.summary,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${DATA.url}/#website`,
+      url: DATA.url,
+      name: `${DATA.name}'s Portfolio`,
+      description: DATA.summary,
+      author: { "@id": `${DATA.url}/#person` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -79,6 +119,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          suppressHydrationWarning
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",

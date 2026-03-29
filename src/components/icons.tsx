@@ -1,10 +1,23 @@
 import { GlobeIcon, MailIcon } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
+type LogoIconProps = React.HTMLAttributes<HTMLImageElement>;
 
 export const Icons = {
   globe: (props: IconProps) => <GlobeIcon {...props} />,
   email: (props: IconProps) => <MailIcon {...props} />,
+  oursociety: ({ className, ...props }: LogoIconProps) => (
+    <img src="/oursociety.png" alt="OurSociety" className={className} {...props} />
+  ),
+  tasket: ({ className, ...props }: LogoIconProps) => (
+    <img src="/tasket.png" alt="Tasket" className={className} {...props} />
+  ),
+  kcal: ({ className, ...props }: LogoIconProps) => (
+    <img src="/kcal.png" alt="KCal" className={className} {...props} />
+  ),
+  xonx: ({ className, ...props }: LogoIconProps) => (
+    <img src="/XonX.png" alt="XonX" className={className} {...props} />
+  ),
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>LinkedIn</title>

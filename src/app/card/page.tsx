@@ -8,13 +8,37 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Card | ${DATA.name}`,
-  description: `Links & profiles for ${DATA.name}`,
+  description: `Links, projects & profiles for ${DATA.name} — developer, creator and student based in ${DATA.location}.`,
+  alternates: {
+    canonical: `${DATA.url}/card`,
+  },
+  openGraph: {
+    title: `Card | ${DATA.name}`,
+    description: `Links, projects & profiles for ${DATA.name} — developer, creator and student based in ${DATA.location}.`,
+    url: `${DATA.url}/card`,
+    type: "profile",
+    images: [
+      {
+        url: `${DATA.url}/api/og?title=${encodeURIComponent(`Card | ${DATA.name}`)}&description=${encodeURIComponent(`Links & profiles for ${DATA.name}`)}`,
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name}'s Card`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Card | ${DATA.name}`,
+    description: `Links, projects & profiles for ${DATA.name}.`,
+    creator: "@div_pathak129",
+    images: [`${DATA.url}/api/og?title=${encodeURIComponent(`Card | ${DATA.name}`)}&description=${encodeURIComponent(`Links & profiles for ${DATA.name}`)}`],
+  },
 };
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function CardPage() {
-  const currentWork = DATA.work.filter((w) => w.end === "Present");
+  const currentWork = DATA.work.filter((w) => w.end === "Current" || w.end === "Present");
   const socialLinks = Object.entries(DATA.contact.social);
 
   return (

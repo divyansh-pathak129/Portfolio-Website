@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, FileTextIcon, HardDriveIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, FileTextIcon } from "lucide-react";
 
 export const DATA = {
   name: "Divyansh Pathak",
@@ -8,9 +8,9 @@ export const DATA = {
   location: "Pune, Maharashtra",
   locationLink: "https://www.google.com/maps/place/pune",
   description:
-    "Creator, Musician, Coder, Student. Currently building OurSociety, Tasket, Notch & MindFlow",
+    "Creator, Musician, Coder, Student. Currently making OurSociety, Tasket, KCal & XonX",
   summary:
-    "I’m Divyansh Pathak. I build things because thinking about them for too long gets boring. I’m a computer science student focused on AI and data science, but the more honest version is that I’m a hands-on product builder who learns by throwing myself at difficult projects and dealing with the consequences in public. I’ve worked across web development, student technical leadership, and a small pile of startup ideas with names that sound like they were chosen at 2 a.m. on purpose.",
+    "I’m Divyansh Pathak. I build things because thinking about them for too long gets boring. I’m a computer science student focused on AI and data science, but the more honest version is that I’m a hands-on product builder who learns by throwing myself at difficult projects and dealing with the consequences in public. I’ve worked across web development, student technical leadership, and a small pile of startup ideas with names that sound like they were chosen at 2 a.m. on purpose. ",
   avatarUrl: "/pfp.jpg",
   skills: [
     "React",
@@ -28,8 +28,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
-    // { href: "/assignments", icon: FileTextIcon, label: "Assignments" },
-    { href: "/drive", icon: HardDriveIcon, label: "Drive" },
+    { href: "/drive", icon: FileTextIcon, label: "Drive" },
   ],
   contact: {
     email: "me@divyanshpathak.ninja",
@@ -63,33 +62,52 @@ export const DATA = {
 
         navbar: false,
       },
+      YouTube: {
+        name: "YouTube",
+        url: "https://www.youtube.com/channel/UCEOCXzzznn3aEpYhejv7OFA",
+        icon: Icons.youtube,
+        navbar: true,
+      },
     },
   },
 
   work: [
-    {
-      company: "OurSociety",
-      badges: [],
-      href: "https://oursociety.org.in",
-      location: "Remote",
-      title: "Co-Founder",
-      logoUrl: "/oursociety.png",
-      start: "2025",
-      end: "Present",
-      description:
-        "OurSociety is a community-driven platform connecting people through shared interests and local communities. Building the product and driving growth from the ground up.",
-    },
+
     {
       company: "Tasket",
       badges: [],
       href: "https://tasket.co",
-      location: "Remote",
-      title: "Co-Founder",
+      location: "Pune",
+      title: "Founder",
       logoUrl: "/tasket.png",
-      start: "2025",
-      end: "Present",
+      start: "Feb 2026",
+      end: "Current",
       description:
-        "Tasket is a productivity startup focused on streamlining task management and team collaboration. Leading product development and strategy.",
+        "Notch is an AI powered assistant deeply integrated into your workflow. It is designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals.",
+    },
+    {
+      company: "OurSociety",
+      badges: [],
+      href: "https://oursociety.org.in",
+      location: "Pune",
+      title: "Founder",
+      logoUrl: "/oursociety.png",
+      start: "Jan 2026",
+      end: "Current",
+      description:
+        "Notch is an AI powered assistant deeply integrated into your workflow. It is designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals.",
+    },
+{
+      company: "KCal",
+      badges: [],
+      href: "https://kcal.divyanshpathak.ninja",
+      location: "Pune",
+      title: "Founder",
+      logoUrl: "/kcal.png",
+      start: "Feb 2026",
+      end: "Current",
+      description:
+        "Notch is an AI powered assistant deeply integrated into your workflow. It is designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals.",
     },
     {
       company: "Notch",
@@ -99,7 +117,7 @@ export const DATA = {
       title: "Founder",
       logoUrl: "/notch.png",
       start: "May 2025",
-      end: "Present",
+      end: "Jan 2026",
       description:
         "Notch is an AI powered assistant deeply integrated into your workflow. It is designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals.",
     },
@@ -112,7 +130,7 @@ export const DATA = {
       title: "Founder",
       logoUrl: "/mindflow.png",
       start: "December 2024",
-      end: "Present",
+      end: "June 2025",
       description:
         "MindFlow is an  productivity focused new-tab chrome extension designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals. The platform is currently live on the Chrome Web Store.",
     },
@@ -185,9 +203,82 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "OurSociety",
+      dates: "Jan 2026",
+      active: true,
+      description:
+        "A platform connecting society members, enabling community engagement, announcements, and seamless communication for residential communities.",
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Shadcn UI",
+        "Magic UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://oursociety.org.in",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/oursociety.png",
+      video: "",
+    },
+    {
+      title: "Tasket",
+      dates: "Feb 2026",
+      active: true,
+      description:
+        "An AI-powered task management platform designed to enhance productivity, streamline workflows, and help teams stay on track with intelligent insights.",
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "OpenAI",
+        "Shadcn UI",
+        "Magic UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://tasket.co",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/tasket.png",
+      video: "",
+    },
+    {
+      title: "KCal",
+      dates: "Feb 2026",
+      active: true,
+      description:
+        "A calorie and nutrition tracking app that helps users monitor their diet, set health goals, and maintain a balanced lifestyle with ease.",
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Shadcn UI",
+        "Magic UI",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://kcal.divyanshpathak.ninja",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/kcal.png",
+      video: "",
+    },
+    {
       title: "Notch",
       dates: "May 2025",
-      active: true,
+      active: false,
       description:
         "Notch is an AI powered assistant deeply integrated into your workflow. It is designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals.",
       technologies: [
@@ -214,7 +305,7 @@ export const DATA = {
     {
       title: "MindFlow",
       dates: "October 2024",
-      active: true,
+      active: false,
       description:
         "MindFlow is an  productivity focused new-tab chrome extension designed to enhance focus and efficiency. It integrates seamlessly with your workflow, offering features like task management, time tracking, and AI-driven insights to help you stay on track and achieve your goals. The platform is currently live on the Chrome Web Store.",
       technologies: [
@@ -342,6 +433,17 @@ export const DATA = {
     //Formix, Workify, Nykaa, MindFlow
   ],
   hackathons: [
+    {
+      title: "Smart India Hackathon - National Round",
+      dates: "December 2024",
+      location: "India",
+      description:
+        "Represented MIT-WPU at the national level of Smart India Hackathon, competing against top teams from across the country.",
+      image:
+        "https://vibgvvzzunbfcqwcjfbk.supabase.co/storage/v1/object/public/Personal%20Stuff/WPU.jpeg?t=2024-09-14T05%3A32%3A13.870Z",
+      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
+      links: [],
+    },
     {
       title: "Smart India Hackathon - Internal Round",
       dates: "September 2024",
@@ -760,4 +862,4 @@ export const DATA = {
     //   ],
     // },
   ],
-};
+} as const;
